@@ -1,0 +1,19 @@
+mat-form-field {
+    padding-top: 8px;
+
+    &:first-child {
+        margin-right: 1rem;
+    }
+
+    &:third-child {
+        width: 100%;
+    }
+}
+
+mat-datepicker-toggle {
+    margin-right: 4px;
+}
+
+.mat-mdc-dialog-actions {
+    justify-content: flex-end;
+}

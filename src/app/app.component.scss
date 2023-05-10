@@ -1,11 +1,14 @@
 mat-icon {
     cursor: pointer;
+    margin-right: 0.5rem;
 }
 
 mat-toolbar,
 mat-toolbar-row {
-    height: 3vh;
-    min-height: 60px;
+    height: 8vh;
+    min-height: 75px;
+    color: white;
+    background-color: #3F51B5;
 }
 
 .mat-drawer-container {
@@ -17,13 +20,21 @@ mat-toolbar-row {
 }
 
 .logo-container {
-    height: 3vh;
-    min-height: 60px;
+    height: calc(8vh - 1px); // border
+    min-height: calc(75px - 1px);
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     padding: 0 1rem 0 1rem;
+
+    a {
+        height: 58px;
+
+        img {
+            height: 58px;
+        }
+    }
 }
 
 .menu-items {

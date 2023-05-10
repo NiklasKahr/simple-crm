@@ -8,6 +8,23 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+mat-form-field {
+    width: calc(50% - 0.5rem);
+    padding-top: 8px;
+
+    &:first-child {
+        margin-right: 1rem;
+    }
+}
+
+mat-datepicker-toggle {
+    margin-right: 4px;
+}
+
 .w-100 {
-    width: 100%;
+    width: 100% !important;
+}
+
+.mat-mdc-dialog-actions {
+    justify-content: flex-end !important;
 }

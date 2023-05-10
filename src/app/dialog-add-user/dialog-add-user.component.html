@@ -13,6 +13,18 @@
         </mat-form-field>
     </p>
     <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Birth Date</mat-label>
+            <input [(ngModel)]="birthDate" [disabled]="isLoading" matInput placeholder="Birth Date" [matDatepicker]="picker1">
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input [(ngModel)]="user.email" [disabled]="isLoading" matInput placeholder="Email">
+        </mat-form-field>
+    </p>
+    <p>
         <mat-form-field appearance="outline" class="w-100">
             <mat-label>Street and Number</mat-label>
             <input [(ngModel)]="user.address" [disabled]="isLoading" matInput placeholder="Street and Number">
@@ -26,14 +38,6 @@
         <mat-form-field appearance="outline">
             <mat-label>City</mat-label>
             <input [(ngModel)]="user.city" [disabled]="isLoading" matInput placeholder="City">
-        </mat-form-field>
-    </p>
-    <p>
-        <mat-form-field appearance="outline">
-            <mat-label>Birth Date</mat-label>
-            <input [(ngModel)]="birthDate" [disabled]="isLoading" matInput placeholder="Birth Date" [matDatepicker]="picker1">
-            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
     </p>
 </div>

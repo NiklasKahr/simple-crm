@@ -1,0 +1,25 @@
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
+<h1 mat-dialog-title>Edit Address</h1>
+<div mat-dialog-content>
+    <p>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Street and Number</mat-label>
+            <input [(ngModel)]="user.address" [disabled]="isLoading" matInput placeholder="Street and Number">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Zip Code</mat-label>
+            <input [(ngModel)]="user.zipCode" [disabled]="isLoading" matInput placeholder="Zip Code">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input [(ngModel)]="user.city" [disabled]="isLoading" matInput placeholder="City">
+        </mat-form-field>
+    </p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button (click)="updateAddress()" mat-button mat-dialog-close cdkFocusInitial>Save</button>
+</div>

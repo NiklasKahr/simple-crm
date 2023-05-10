@@ -24,14 +24,21 @@ import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideFunctions, getFunctions } from '@angular/fire/functions';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-
+import { MatCardModule } from '@angular/material/card';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
+import { DialogEditDetailsComponent } from './dialog-edit-details/dialog-edit-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     UserComponent,
-    DialogAddUserComponent
+    DialogAddUserComponent,
+    UserDetailComponent,
+    DialogEditAddressComponent,
+    DialogEditDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +56,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatNativeDateModule,
     FormsModule,
     MatProgressBarModule,
+    MatCardModule,
+    MatMenuModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

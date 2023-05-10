@@ -1,0 +1,31 @@
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
+<h1 mat-dialog-title>Edit Details</h1>
+<div mat-dialog-content>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input [(ngModel)]="user.firstName" [disabled]="isLoading" matInput placeholder="First Name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input [(ngModel)]="user.lastName" [disabled]="isLoading" matInput placeholder="Last Name">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input [(ngModel)]="user.email" [disabled]="isLoading" matInput placeholder="Email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Birth Date</mat-label>
+            <input [(ngModel)]="birthDate" [disabled]="isLoading" matInput placeholder="Birth Date" [matDatepicker]="picker1">
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+    </p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button (click)="updateDetails()" mat-button mat-dialog-close cdkFocusInitial>Save</button>
+</div>

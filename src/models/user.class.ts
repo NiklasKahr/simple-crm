@@ -1,28 +1,31 @@
 export class User {
     firstName!: string;
     lastName!: string;
-    address!: string;
+    email!: string;
+    birthDate!: number;
     zipCode!: number;
     city!: string;
-    birthDate!: number;
+    address!: string;
 
     constructor(object?: any) {
         this.firstName = object ? object.firstName : '';
         this.lastName = object ? object.lastName : '';
-        this.address = object ? object.street : '';
+        this.email = object ? object.email : '';
+        this.birthDate = object ? object.birthDate : '';
         this.zipCode = object ? object.zipCode : '';
         this.city = object ? object.city : '';
-        this.birthDate = object ? object.birthDate : '';
+        this.address = object ? object.address : '';
     }
 
     public toJson() {
         return {
             firstName: this.firstName,
             lastName: this.lastName,
-            address: this.address,
+            email: this.email,
+            birthDate: this.birthDate,
             zipCode: this.zipCode,
             city: this.city,
-            birthDate: this.birthDate,
+            address: this.address,
         }
     }
 }

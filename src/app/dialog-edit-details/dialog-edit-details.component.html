@@ -1,4 +1,4 @@
-<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
 
 <h1 mat-dialog-title>Edit Details</h1>
 <div mat-dialog-content>
@@ -27,5 +27,5 @@
 </div>
 <div mat-dialog-actions>
     <button mat-button mat-dialog-close>Cancel</button>
-    <button (click)="updateDetails()" mat-button mat-dialog-close cdkFocusInitial>Save</button>
+    <button (click)="updateUser()" mat-button mat-dialog-close cdkFocusInitial>Save</button>
 </div>

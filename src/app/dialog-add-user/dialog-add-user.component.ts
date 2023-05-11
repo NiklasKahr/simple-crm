@@ -25,12 +25,12 @@ export class DialogAddUserComponent {
 
     this.docRef = doc(collection(this.firestore, 'users'));
     await setDoc(this.docRef, this.user.toJson()).then(async () => {
-      const docSnap = await getDoc(this.docRef);
-      if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
-      } else {
-        console.log("No such document!");
-      }
+      // const docSnap = await getDoc(this.docRef);
+      // if (docSnap.exists()) {
+      //   console.log("Document data:", docSnap.data());
+      // } else {
+      //   console.log("No such document!");
+      // }
       this.isLoading = false;
     });
     this.dialogRef.close();

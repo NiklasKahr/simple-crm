@@ -13,14 +13,13 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class UserDetailComponent implements OnInit {
   private firestore: Firestore = inject(Firestore);
-  stuff: any;
   user: User = new User;
+  data: any;
 
   constructor(private route: ActivatedRoute, public dialog: MatDialog) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.route.params.subscribe((params) => {
-      console.log('params.id: ' + params['id']);
       this.getUser(params['id']);
     });
   }
@@ -29,22 +28,18 @@ export class UserDetailComponent implements OnInit {
     const docRef = doc(collection(this.firestore, 'users'), docId);
     docData(docRef).subscribe((doc: any) => {
       this.user = new User(doc);
+      this.data = {
+        user: new User(this.user),
+        docId: docId
+      };
     });
   }
 
   editDetails() {
-    this.dialog.open(DialogEditDetailsComponent).componentInstance.user = JSON.parse(JSON.stringify(this.user));
+    this.dialog.open(DialogEditDetailsComponent, { data: this.data });
   }
 
   editAddress() {
-    this.dialog.open(DialogEditAddressComponent).componentInstance.user = JSON.parse(JSON.stringify(this.user));
+    this.dialog.open(DialogEditAddressComponent, { data: this.data });
   }
-
-  /*
-  async updateUser () {
-    console.log(this.user);
-    console.log(this.user.toJson());
-    await updateDoc(this.docRef, this.game.toJson());
-  }
-  */
 }

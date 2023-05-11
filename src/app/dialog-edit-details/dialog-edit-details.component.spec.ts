@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DialogEditDetailsComponent } from './dialog-edit-details.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { RouterModule } from '@angular/router';
 
 describe('DialogEditDetailsComponent', () => {
   let component: DialogEditDetailsComponent;
@@ -8,9 +9,10 @@ describe('DialogEditDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogEditDetailsComponent ]
+      imports: [RouterModule.forRoot([]), MatDialogModule],
+      declarations: [DialogEditDetailsComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(DialogEditDetailsComponent);
     component = fixture.componentInstance;

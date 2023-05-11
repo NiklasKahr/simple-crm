@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { UserComponent } from './user.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 describe('UserComponent', () => {
   let component: UserComponent;
@@ -8,9 +8,10 @@ describe('UserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserComponent ]
+      imports: [MatDialogModule],
+      declarations: [UserComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(UserComponent);
     component = fixture.componentInstance;
